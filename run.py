@@ -6,7 +6,7 @@ activate_this = '%s/venv/bin/activate_this.py' % os.path.dirname(os.path.abspath
 execfile(activate_this, dict(__file__=activate_this))
 
 from werkzeug.contrib.fixers import ProxyFix
-from duian import app
+from wespider import app
 app.wsgi_app = ProxyFix(app.wsgi_app)
 app.debug = True
 app.config['SITE_NAME'] = "WeSpider"
