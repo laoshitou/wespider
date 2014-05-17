@@ -1,0 +1,53 @@
+{% extends "layout.html" %}
+{% set active_page = "post" %}
+
+{% block title_block %}
+我的文章 | {{ config.SITE_NAME }}
+{% endblock %}
+
+{%block site_header_block%}
+{% include 'post_site_header_wrap.html' %}
+{% endblock %}
+
+{% block content_block %}
+
+<div class="full_box mt30 clearfix">
+	<div class="container clearfix mb30">
+		<div class="w70pc-box pd20 whitebg fl">
+			<div class="mb20 pb10 border-b clearfix">
+				<h2 class="section_title fl">我的文章</h2>
+				<ul class="nav nav-pills fr" id="my_post_tab">
+					<li class="active"><a href="#draft_tab_content" data-toggle="tab">草稿</a></li>
+					<li><a href="#commit_tab_content" data-toggle="tab">已提交</a></li>
+				</ul>
+			</div>
+			
+			<div class="tab-content">	
+				<div class="tab-pane active" id="draft_tab_content">
+					{% include 'my_draft_list_wrap.html' %}
+				</div>
+
+				<div class="tab-pane" id="commit_tab_content">
+					{% include 'my_post_list_wrap.html' %}
+				</div>
+			
+			</div>
+									
+			
+		</div>
+		<!-- class.w70pc-box end -->
+
+
+		<div class="w30pc-box pd20 whitebg fr">
+			
+		</div>
+		<!-- class.w35pc-box end -->
+	</div>
+	<!-- class.container end -->
+</div>
+<!-- class.full_box end -->
+
+{% include 'my_post_ops_box_modal.html' %}
+
+{% endblock %}
+

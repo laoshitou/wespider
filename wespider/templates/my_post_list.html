@@ -1,0 +1,14 @@
+{% for pt in pts %}
+<li>
+<div class="page_title_wrap mb10">
+	<a href="/post/{{ pt.id }}" target="_blank">{{ pt.title }}</a>
+</div>
+<div id="page_tip_wrap_{{ pt.id }}"class="page_tip_wrap" style="display: none;">{{ pt.excerpt }}</div>
+<div class="page_meta">
+	<span><i class="icon-time"></i> {{ pt.update_date }}</span>
+	<span class="page_ops_btn post_del_btn" post_id="{{ pt.id }}" post_title="{{ pt.title }}"><i class="icon-trash"></i> 删除</span>
+	<a class="page_ops_btn" href="/post/{{ pt.id }}/edit" target="_blank"><i class="icon-edit"></i> 更新</a>
+</div>
+</li>
+{% endfor %}
+

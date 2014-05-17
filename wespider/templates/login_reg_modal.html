@@ -1,0 +1,125 @@
+<!-- Modal -->
+<div id="LoginModal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+	<div class="modal-dialog">
+		<div class="modal-content">
+			<div class="modal-header">
+				<button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+				<h3 id="myModalLabel">登录对岸</h3>
+			</div>
+
+			<div class="modal-body">
+				<div class="login-form-wrap" id="loginform">
+					<ul class="w-user w-user-1">
+						<li class="w0">
+						<div class="alert alert-danger" id="loginwarn" style="display:none;">
+							<span class="ztag">邮箱/用户名或密码错误</span>
+						</div>
+
+						<label>邮箱/用户名</label>
+						<input type="text" tabindex="1" class="form-control" name="user_email_name" id="user_email_name" warnid="loginwarn">
+
+						</li>
+
+						<li class="w0">
+						<label>密码</label>
+						<input tabindex="2" name="password" type="password" class="form-control" warnid="loginwarn" id="password">
+						</li>
+
+
+					</ul>
+				</div>
+				<!-- class.login-form-wrap end -->
+
+			</div>
+			<!-- class.modal-body end -->
+
+			<div class="modal-footer">
+				<button class="btn" data-dismiss="modal" aria-hidden="true" type="button">取消</button>
+				<button id="login-submit-btn" class="btn btn-success" type="button">登 录</button>
+			</div>
+			<!-- class.modal-footer end -->
+		</div>
+		<!-- /.modal-content -->
+	</div>
+	<!-- /.modal-dialog -->
+</div>
+<!-- /.modal -->
+
+
+
+
+<!-- Modal -->
+<div id="RegModal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+	<div class="modal-dialog">
+		<div class="modal-content">
+
+			<div class="modal-header">
+				<button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+				<h3 id="myModalLabel">注册 对岸</h3>
+			</div>
+			<div class="modal-body">
+				<div class="reg-form-wrap" id="regform">
+					<ul class="w-user w-user-2">
+
+						<li class="w0">
+						<label>用户名</label>
+						<div class="alert alert-danger" style="display:none;" id="reg_user_name_warn">
+							<span class="ztag">用户名已经被占用</span>
+						</div>
+						<input tabindex="101" type="text" class="form-control" name="user_name" id="user_name" warnid="reg_user_name_warn">
+						</li>
+
+						<li class="w0">
+						<label>常用邮箱</label>
+						<div class="alert alert-danger" style="display:none;" id="reg_user_email_warn">
+							<span class="ztag">请使用正确的邮箱地址</span>
+						</div>
+						<input tabindex="101" type="email" class="form-control"  name="user_email" id="user_email" warnid="reg_user_email_warn">
+						</li>
+						<li class="w0">
+						<label>密码</label>
+						<div class="alert alert-danger" style="display:none;" id="reg_password_warn">
+							<span class="ztag">请输入6-16个字符的密码</span>
+						</div>
+						<input tabindex="102" type="password" class="form-control" name="password" id="password" warnid="reg_password_warn">
+						</li>
+					</ul>
+				</div>
+				<!-- class.reg-form-wrap -->
+			</div>
+			<!-- class.modal-body end -->
+
+			<div class="modal-footer">
+				<button class="btn" data-dismiss="modal" aria-hidden="true" type="button">取消</button>
+				<button id="reg-submit-btn" class="btn btn-success" type="button">注 册</button>
+			</div>
+		</div>
+		<!-- /.modal-content -->
+	</div>
+	<!-- /.modal-dialog -->
+</div>
+<!-- /.modal -->
+
+
+
+
+<!-- id#RegSuccessModal begin -->
+<div id="RegSuccessModal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+	<div class="modal-dialog">
+		<div class="modal-content">
+
+			<div class="modal-header">
+				<h3 id="myModalLabel"></h3>
+			</div>
+			<div class="modal-body">
+			</div>
+			<div class="modal-footer">
+				<button class="btn btn-success" data-dismiss="modal" aria-hidden="true">知道啦, 下一步上传头像</button>
+			</div>
+		</div>
+		<!-- /.modal-content -->
+	</div>
+	<!-- /.modal-dialog -->
+</div>
+<!-- /.modal -->
+

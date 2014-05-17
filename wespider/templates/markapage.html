@@ -1,0 +1,80 @@
+{% extends "layout.html" %}
+
+{% block title_block %}
+收藏Page | 对岸
+{% endblock %}
+
+
+{%block header_block%}
+
+
+{% endblock %}
+
+{% block content_block %}
+
+<div id="add_url_wrap" class="w100pc-box mt30" style="">	
+	
+	{% if not g.user %}
+		
+		<div class="w70pc-box" style="font-size: 20px;">
+		您好没有登录，请
+
+		<button type="button" class="reg-btn btn btn-success" href="#RegModal" data-toggle="modal">注 册</button>
+		或
+		<button type="button" class="btn login-btn" href="#LoginModal" data-toggle="modal">登 录</button>
+		后，进行收藏操作
+		</div>
+
+
+		{% include 'login_reg_modal.html' %}
+
+	{% else %}
+
+	<div id="page_clip_wrap" class="w100pc-box mb20 clearfix">
+		<div id="page_clip_info_wrap" class="w65pc-box fl">
+			
+			<div id="select_clip_box_title" class="mb20">
+				<h2>Page 信息</h2>
+			</div>
+
+			<div id="add_url_url" class="input-group mb30">
+				<span class="input-group-addon">网址</span>
+				<input type="text" class="form-control" value="{{ page_url }}" disabled>
+			</div>
+			
+			<div id="o_page_title" class="input-group mb30" style="display: none">
+				<span class="input-group-addon">标题</span>
+				<input type="text" class="form-control" value="{{ page_title }}" disabled>
+			</div>
+
+			<div id="add_url_title" class="input-group mb30">
+				<span class="input-group-addon">标题</span>
+				<input type="text" class="form-control" value="{{ page_title }}">
+			</div>
+
+			<div id="add_url_desc" class="mb30">
+				<textarea class="form-control" placeholder="给Page加上一段标注，用于提示自己Page的用途、主要内容等" row=6>{{ page_cnt }}</textarea>
+			</div>
+		</div>
+		<!-- class.w65pc-box end -->
+
+		<div id="page_clip_option_wrap" class="w35pc-box fr">
+
+			{% include 'select_clip_box_wrap.html' %}
+			
+		</div>
+		<!-- class.w30pc-box end -->
+	</div>
+	<!-- class.w100pc-box end -->
+
+	<div id="add_url_ops" class="clearfix">
+		<button id="add_url_confirm_btn" class="btn btn-success fr select_pb_value_holder" pb_id="{{ pb_id }}" type="button">确认</button>
+		<button id="add_url_cancel_btn" class="btn btn-default fr" type="button">取消</button>
+	</div>
+
+	{% endif %}
+</div>
+<!-- id#add_url_wrap end -->
+
+
+{% endblock %}

@@ -1,0 +1,43 @@
+{% extends "layout.html" %}
+
+{% block title_block %}
+我收藏的Page | {{ config.SITE_NAME }}
+{% endblock %}
+
+
+{% block content_block %}
+
+<div class="full_box mt30 clearfix">
+	<div class="container clearfix mb30">
+		<div class="w70pc-box pd20 whitebg fl">
+			<div class="mb20 pb10 border-b">
+				<h2 class="section_title">我收藏的Page</h2>
+			</div>
+			
+			
+			{% include 'search_my_page_ret_summary.html' %}
+			
+			{% include 'my_page_list_wrap.html' %}
+			
+			{% include 'loadmorepage.html' %}
+			
+									
+			{% include 'target_page_box_modal.html' %}
+			
+		</div>
+		<!-- class.w70pc-box end -->
+
+
+		<div class="w30pc-box pd20 whitebg fr">
+			{% include 'my_page_box_wrap.html' %}
+			
+		</div>
+		<!-- class.w35pc-box end -->
+	</div>
+	<!-- class.container end -->
+</div>
+<!-- class.full_box end -->
+
+
+{% endblock %}
+

@@ -1,0 +1,95 @@
+{% extends "layout.html" %}
+
+{% block title_block %}
+剪藏Page | 对岸
+{% endblock %}
+
+
+{%block header_block%}
+
+
+{% endblock %}
+
+{% block content_block %}
+
+<div id="add_url_wrap" class="w100pc-box mt30" style="">	
+
+
+	<div id="page_clip_wrap" class="w100pc-box mb20 clearfix">
+		<div id="page_clip_info_wrap" class="w65pc-box fl">
+			
+			<div id="select_clip_box_title" class="mb20">
+				<h2>Page Clip 信息</h2>
+			</div>
+
+			<div id="add_url_url" class="input-group mb30">
+				<span class="input-group-addon">网址</span>
+				<input type="text" class="form-control" value="{{ clip_page_url }}" disabled>
+			</div>
+
+			<div id="add_url_title" class="input-group mb30">
+				<span class="input-group-addon">标题</span>
+				<input type="text" class="form-control" value="{{ clip_page_title }}" disabled>
+			</div>
+
+			<div id="add_url_desc" class="mb30">
+				<textarea class="form-control" placeholder="添加剪藏内容" row=6>{{ clip_page_cnt }}</textarea>
+			</div>
+		</div>
+		<!-- class.w65pc-box end -->
+
+		<div id="page_clip_option_wrap" class="w35pc-box fr">
+
+			<div id="select_clip_box_wrap" class="">
+				<div id="select_clip_box_title" class="">
+					<h2>选择Clip Box</h2>
+				</div>
+
+				<div id="select_clip_box_search">
+					<div class="input-group">
+						<input type="text" id="url" name="url" class="form-control" placeholder="检索clip box">
+						<span class="input-group-btn">
+							<button class="btn btn-default" type="button">检索</button>
+						</span>
+					</div><!-- /input-group -->
+				</div>
+
+				<div id="select_clip_box_list">
+					<ul class="">
+
+						<li class="">
+							待使用的信息
+						</li>
+
+
+						<li class="">
+							半快门内容收集
+						</li>
+					</ul>
+				</div>
+				
+				<div id="select_clip_box_create">
+					<div class="input-group">
+						<input type="text" id="url" name="url" class="form-control" placeholder="创建clip box">
+						<span class="input-group-btn">
+							<button id="" class="btn btn-default" type="button">创建</button>
+						</span>
+					</div><!-- /input-group -->
+				</div>
+
+			</div>
+			<!-- id#select_clip_box_wrap end -->
+		</div>
+		<!-- class.w30pc-box end -->
+	</div>
+	<!-- class.w100pc-box end -->
+
+	<div id="add_url_ops" class="clearfix">
+		<button id="add_url_confirm_btn" class="btn btn-success fr" type="button">确认</button>
+		<button id="add_url_cancel_btn" class="btn btn-default fr" type="button">取消</button>
+	</div>
+</div>
+<!-- id#add_url_wrap end -->
+
+
+{% endblock %}

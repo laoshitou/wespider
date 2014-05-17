@@ -1,0 +1,19 @@
+
+
+
+
+
+<div id="install_add_btn_wrap" class="mt30 container" style="display: none;">	
+	<div class="panel panel-default">
+
+		<div class="panel-body">
+			<div id="s_install_drag_img" class="install-drag-img" style="display: block;"></div>
+			<div>
+				<span id="install_add_btn_desc">拖动右侧按钮到浏览器书签栏</span>
+				<a id="s_install_add_btn" class="btn btn-default btn-lg" type="button" href="javascript:((function(s, d, e) {var u=location; var selectedText; if(window.getSelection) { selectedText=window.getSelection();} else if(document.selection) { selectedText=document.selection.createRange().text;} var f = 'http://duian.guixiandao.com/markapage?url='+e(u.href)+'&title='+e(d.title)+'&clipcnt='+e(selectedText);function a() {if (!window.open(f, 'bdshare', 'toolbar=0,status=0,resizable=1,width=700,height=450,left='+(s.width - 700) / 2+',top='+(s.height - 650) / 2)) u.href = f;};if (/Firefox/.test(navigator.userAgent)) setTimeout(a, 0);else a();})(screen, document, encodeURIComponent));"><i class="icon-cut"></i>&nbsp;&nbsp;收藏Page到对岸</a>
+			</div>
+		</div>
+	</div>
+</div>
+<!-- id#install_add_btn_wrap end -->
+

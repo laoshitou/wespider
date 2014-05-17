@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>A Simple Online Editor</title>
+	<meta charset="utf-8" />
+
+	<link media="all" rel="stylesheet" type="text/css" href="assets/styles/font-awesome.css" />
+	<link media="all" rel="stylesheet" type="text/css" href="assets/styles/simditor.css" />
+	<style type="text/css" media="all">
+		body {
+			margin: 0;
+			padding: 0;
+		}
+
+		.wrapper {
+			width: 880px;
+			margin: 0 auto 80px;
+		}
+
+	</style>
+
+	<script type="text/javascript" src="assets/scripts/jquery-2.1.0.min.js"></script>
+	<script type="text/javascript" src="assets/scripts/simditor-all.js"></script>
+	<script type="text/javascript">
+		$(function() {
+			var editor = new Simditor({
+				textarea: $('#txt-content'),
+				placeholder: '这里输入文字...',
+				pasteImage: true,
+				toolbar: ['title', 'bold', 'italic', 'underline', 'strikethrough', '|', 'ol', 'ul', 'blockquote', 'code', 'table', '|', 'link', 'image', 'hr', '|', 'indent', 'outdent'],
+				defaultImage: 'assets/images/image.png',
+				upload: location.search === '?upload' ? {url: '/upload'} : false
+			});
+		});
+	</script>
+
+</head>
+<body>
+	<div class="wrapper">
+		<textarea id="txt-content" data-autosave="editor-content" autofocus></textarea>
+	</div>
+</body>
+</html>
+
+
+

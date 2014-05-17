@@ -1,0 +1,36 @@
+
+
+<div class="site-header-wrap">
+	<div class="site-header container clearfix">
+		<div class="logo-wrap clearfix fl">
+			<a href="/post" class="fl"></a>
+			<span class="section_name fl">文章</span>
+		</div>
+
+		<div class="search_and_fetch_wrap fl">
+			<div class="clearfix">
+				<input type="text" id="pg_skw" name="pg_skw" class="form-control fl" placeholder="搜索我的文章">
+				<button id="pg_skw_btn" class="btn btn-default fl" type="button" pb_id="{{ pb_id }}" start="0"><i class="icon-search"></i></button>
+			</div><!-- /input-group -->
+		</div>
+		<!-- /.row -->
+		
+		{% if g.user %}
+		<div class="section-nav clearfix fl">
+			<ul>
+				<li class="current"><a href="/post">我的文章</a></li>
+				<li><a href="/post/explore">浏览发现</a></li>
+				<li><a href="/post/follow">好友动态</a></li>
+			</ul>
+		</div>
+		{% endif %}
+
+
+		<div class="open_install_add_wrap fr">
+			<a class="btn btn-success section-btn-new fl" type="button" href="/write"><i class="icon-plus"></i> 写文章</a>
+		</div>
+	</div>
+	<!-- class.site-header end -->
+</div>
+<!-- class.site-header-wrap end -->
+

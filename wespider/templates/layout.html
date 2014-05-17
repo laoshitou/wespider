@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<meta name="description" content="">
+		<meta name="author" content="">
+
+		<title>{%block title_block%}{{ config.SITE_NAME }}{%endblock%}</title>
+
+		<!-- 最新 Bootstrap 核心 CSS 文件 -->
+		<link rel="stylesheet" href="http://cdn.bootcss.com/twitter-bootstrap/3.0.3/css/bootstrap.min.css">
+
+		<!-- jQuery文件。务必在bootstrap.min.js 之前引入 -->
+		<script src="/static/js/jquery.js"></script>
+
+		<!-- 最新的 Bootstrap 核心 JavaScript 文件 -->
+		<script src="http://cdn.bootcss.com/twitter-bootstrap/3.0.3/js/bootstrap.min.js"></script>
+
+		
+		<script src="/static/js/me.js"></script>
+		<link rel="stylesheet" type="text/css" href="/static/css/font-awesome.min.css">
+		
+
+		<link rel="stylesheet" type="text/css" href="/static/css/style.css">
+		{% block css_block %}
+		{% endblock %}
+
+
+	</head>
+
+	<body>
+		{% with messages = get_flashed_messages() %}
+		{% if messages %}
+		<div class="global_alert_box">
+			<div class="alert alert-success alert-dismissable">
+				<button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+				<ul class=flashes>
+					{% for message in messages %}
+					<li>{{ message }}</li>
+					{% endfor %}
+				</ul>
+			</div>
+		</div>
+		<script type="text/javascript">
+			 setTimeout( function(){$( '.global_alert_box' ).fadeOut('slow');}, 1000 );
+		</script>
+		<!-- class.global_alter_box -->
+		{% endif %}
+		{% endwith %}
+
+		{%block header_block%}
+		<div id="global_header" class="full-box clearfix">
+
+						
+			{%block site_header_block%}
+			<div class="site-header-wrap">
+				<div class="site-header container clearfix">
+					<div class="logo-wrap clearfix fl">
+						<a href="/" class="fl"></a>
+						<span class="section_name fl" style="display: none;">书签</span>
+					</div>
+					
+					<div class="search_and_fetch_wrap fl">
+						<div class="clearfix">
+							<input type="text" id="pg_skw" name="pg_skw" class="form-control fl" placeholder="搜索收藏过的Page">
+							<button id="pg_skw_btn" class="btn btn-default fl" type="button" pb_id="{{ pb_id }}" start="0"><i class="icon-search"></i></button>
+						</div><!-- /input-group -->
+					</div>
+					<!-- /.row -->
+					
+					<div class="section-nav clearfix fl">
+						
+						{% set top_menu_bar = [
+							('/', 'fastdial', 'icon-th', '快捷拨号'),
+							('/mybox', 'mybox', 'icon-heart', '我的收藏')
+						] -%}
+						{% set active_page = active_page|default('fastdial') -%}
+
+						<ul>
+
+							{% for href, id, icon, caption in top_menu_bar %}
+							<li{%if id == active_page %} class="current"{%endif%}><a href="{{ href }}"><i class="{{ icon }}"></i> {{ caption }}</a></li>
+							{% endfor %}
+
+						</ul>
+					</div>
+
+					
+					
+					<div class="login-wrap clearfix fr">
+						{% if not g.user %}
+						<ul class="not_user_login">
+							<li>
+							<a class="my_nav_dropdown_btn reg-btn" href="#RegModal" data-toggle="modal">注 册</a>
+							</li>
+							<li>
+							<a class="my_nav_dropdown_btn login-btn" href="#LoginModal" data-toggle="modal">登 录</a>
+							</li>
+						<ul>
+						{% else %}
+						<div class="dropdown">
+							<a class="my_nav_dropdown_btn" data-toggle="dropdown" href="#">{{ g.user.user_name }} <b class="caret"></b></a>
+							<ul class="dropdown-menu" role="menu" aria-labelledby="dLabel">
+								<li role="presentation">
+								<a role="menuitem" tabindex="-1" href="/u/{{ g.user.id }}"><i class="icon-home"></i> 我的主页</a>
+								</li>
+								<li class="divider"></li>
+
+								<li role="presentation">
+								<a role="menuitem" tabindex="-1" id="logout-submit-btn"><i class="icon-off"></i> 退 出</a>
+								</li>
+							</ul>
+						</div>
+						{% endif %}
+					</div>
+					<!-- class.login-wrap end -->
+					<div class="open_install_add_wrap fr">
+						<a id="open_install_add_btn" class="section-btn-new fl" type="button"><i class="icon-plus"></i> 我要收藏</a>
+					</div>
+				</div>
+				<!-- class.site-header end -->
+			</div>
+			<!-- class.site-header-wrap end -->
+			{%endblock%}
+
+		</div>
+		{% include 'install_add_btn_wrap.html' %}
+
+		{%endblock%}
+		
+		{% if not g.user %}
+		{% include 'login_reg_modal.html' %}
+		{% endif %}
+
+				
+		{%block content_block%}
+		{%endblock%}
+		
+		{%block js_block%}
+		{%endblock%}
+
+	</body>
+
+</html>
+
+

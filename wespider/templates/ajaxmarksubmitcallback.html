@@ -1,0 +1,50 @@
+{% extends "layout.html" %}
+
+{% block title_block %}
+Page收藏成功 | 对岸
+{% endblock %}
+
+
+{%block header_block%}
+
+
+{% endblock %}
+
+{% block content_block %}
+
+<div id="add_url_wrap" class="w100pc-box mt30" style="">	
+
+
+	<div id="" class="w70pc-box mb20 clearfix">
+		<div id="" class="w100pc-box panel panel-default">
+			
+			<div id="select_clip_box_title" class="mb20 panel-heading">
+				<h2>Page 信息</h2>
+			</div>
+
+			<div id="add_url_url" class="input-group mb30">
+				<span class="input-group-addon">网址</span>
+				<p>{{ page.url }}</p>
+			</div>
+			
+			<div id="add_url_title" class="input-group mb30">
+				<span class="input-group-addon">标题</span>
+				<p>{{ page.title }}</p>
+			</div>
+
+			<div id="add_url_desc" class="mb30">
+				<p>{{ page.tip }}</p>
+			</div>
+
+			<button type="button" class="btn btn-primary btn-lg btn-block" onclick='javascript:((function() { window.open("","_self","");window.opener=null;window.close();})())'>关闭窗口</button>
+		</div>
+		<!-- class.w65pc-box end -->
+		
+	</div>
+	<!-- class.w100pc-box end -->
+
+</div>
+<!-- id#add_url_wrap end -->
+
+
+{% endblock %}

@@ -1,0 +1,117 @@
+<!-- Modal -->
+<div id="TargetPageBoxModal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+	<div class="modal-dialog">
+		<div class="modal-content">
+			<div class="modal-header">
+				<button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+				<h3 id="myModalLabel">移动到新的Page Box</h3>
+			</div>
+
+			<div class="modal-body">
+
+				<div class="panel panel-default">
+					<div class="panel-heading">
+						<h2 id="moved_page_title"></h2>
+					</div>
+					<div class="panel-body">
+						{% include 'select_clip_box_wrap.html' %}
+					</div>
+				</div>	
+
+			</div>
+			<!-- class.modal-body end -->
+
+			<div class="modal-footer">
+				<button class="btn btn-sm" data-dismiss="modal" aria-hidden="true" type="button">取消</button>
+				{% if pbs %}
+				<button id="moveto_page_box_submit_btn" class="btn btn-success btn-sm fr select_pb_value_holder" pb_id="{{ pbs.0.id }}" type="button">确认</button>
+				{% else %}
+				<button id="moveto_page_box_submit_btn" class="btn btn-success btn-sm fr select_pb_value_holder" pb_id="" type="button">确认</button>
+				{% endif %}
+			</div>
+			<!-- class.modal-footer end -->
+		</div>
+		<!-- /.modal-content -->
+	</div>
+	<!-- /.modal-dialog -->
+</div>
+<!-- /.modal -->
+
+
+
+<!-- Modal -->
+<div id="DelPageModal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+	<div class="modal-dialog">
+		<div class="modal-content">
+			<div class="modal-header">
+				<button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+				<h3 id="myModalLabel">取消收藏Page</h3>
+			</div>
+
+			<div class="modal-body">
+			
+				<p style="font-size: 13px;">确定要取消收藏《<span id="del_page_title" style="color: #007349;"></span>》吗?</p>
+				
+			</div>
+			<!-- class.modal-body end -->
+
+			<div class="modal-footer">
+				<button class="btn btn-sm" data-dismiss="modal" aria-hidden="true" type="button">否</button>
+				<button id="del_page_submit_btn" class="btn btn-success btn-sm fr" page_id="" type="button">是</button>
+			</div>
+			<!-- class.modal-footer end -->
+		</div>
+		<!-- /.modal-content -->
+	</div>
+	<!-- /.modal-dialog -->
+</div>
+<!-- /.modal -->
+
+
+
+<!-- Modal -->
+<div id="EditPageModal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+	<div class="modal-dialog">
+		<div class="modal-content">
+			<div class="modal-header">
+				<button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+				<h3 id="myModalLabel">编辑Page</h3>
+			</div>
+
+			<div class="modal-body">
+				<div id="" class="w100pc-box">
+
+
+					<div id="add_url_url" class="input-group mb30">
+						<span class="input-group-addon">网址</span>
+						<input type="text" class="form-control" value="" disabled>
+					</div>
+
+
+					<div id="add_url_title" class="input-group mb30">
+						<span class="input-group-addon">标题</span>
+						<input type="text" class="form-control" value="">
+					</div>
+
+					<div id="add_url_desc" class="mb30">
+						<textarea class="form-control" placeholder="给Page加上一段标注，用于提示自己Page的用途、主要内容等" row=6></textarea>
+					</div>
+				</div>
+				<!-- class.w65pc-box end -->
+
+				
+			</div>
+			<!-- class.modal-body end -->
+
+			<div class="modal-footer">
+				<button class="btn btn-sm" data-dismiss="modal" aria-hidden="true" type="button">取消</button>
+				<button id="edit_page_submit_btn" class="btn btn-success btn-sm fr" page_id="" type="button">提交</button>
+			</div>
+			<!-- class.modal-footer end -->
+		</div>
+		<!-- /.modal-content -->
+	</div>
+	<!-- /.modal-dialog -->
+</div>
+<!-- /.modal -->
+

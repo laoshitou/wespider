@@ -1,0 +1,38 @@
+<div id="my_page_box_wrap">
+
+	<div class="mb10 pb10 border-b clearfix">
+		<h2 class="section_title fl">我的Page Box</h2>
+		<a class="btn btn-default btn-xs fr" href="#CreateMyPageBoxModal" data-toggle="modal"><i class="icon-plus"></i> 创建</a>
+	</div>
+
+	<div id="search_my_page_box_wrap" class="mb10">
+		<div class="input-group">
+			<input type="text" id="url" name="url" class="form-control" placeholder="检索我的Page Box">
+			<span class="input-group-btn">
+				<button class="btn btn-default" type="button"><i class="icon-search"></i></button>
+			</span>
+		</div><!-- /input-group -->
+	</div>
+
+
+	<div class="mb20" style="">
+		<div class="" id="my_page_box_list">
+			<ul class="nav nav-pills nav-stacked">
+				{% if pb %}
+				<li class="active"><a href="/pagebox/{{ pb.id }}" pb_id="{{ pb_id }}">{{ pb.name }}</a></li>
+				{% endif %}
+				{% for pb in pbs %}
+				<li><a href="/pagebox/{{ pb.id }}" pb_id="{{ pb_id }}">{{ pb.name }}</a></li>
+				{% endfor %}
+			</ul>
+		</div>
+
+	</div>
+
+
+
+</div>
+<!-- id#my_page_box_wrap>
+
+
+{% include 'create_my_page_box_modal.html' %}

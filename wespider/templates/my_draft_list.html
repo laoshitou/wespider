@@ -1,0 +1,15 @@
+{% for pd in pds %}
+<li>
+<div class="page_title_wrap mb10">
+	<a href="/post/draft/{{ pd.id }}/edit" target="_blank">{{ pd.title }}</a>
+</div>
+<div id="page_tip_wrap_{{ pd.id }}"class="page_tip_wrap" style="display: none;">{{ pd.excerpt }}</div>
+<div class="page_meta">
+	<span><i class="icon-time"></i> {{ pd.update_date }}</span>
+	
+	<span class="page_ops_btn draft_del_btn" post_draft_id="{{ pd.id }}" post_draft_title="{{ pd.title }}"><i class="icon-trash"></i> 删除草稿</span>
+
+</div>
+</li>
+{% endfor %}
+

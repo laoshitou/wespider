@@ -1,0 +1,32 @@
+{% extends "layout.html" %}
+{% set active_page = "post" %}
+
+{% block title_block %}
+{{ config.SITE_NAME }}
+{% endblock %}
+
+{%block site_header_block%}
+{% include 'post_site_header_wrap.html' %}
+{% endblock %}
+
+{% block content_block %}
+
+<div class="full_box mt30 clearfix">
+	<div class="container clearfix mt30 mb30">
+		<div class="access_denied_wrap">
+			<div class="access_denied_header mb20">
+				<h2>{{ title }}</h2>
+			</div>
+
+			<div class="access_denied_content">
+				<p>{{ content }}</p>
+			</div>
+		</div>
+	</div>
+	<!-- class.container end -->
+</div>
+<!-- class.full_box end -->
+
+
+{% endblock %}
+

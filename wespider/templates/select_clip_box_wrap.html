@@ -1,0 +1,41 @@
+<div id="select_clip_box_wrap" class="">
+	<div id="select_clip_box_title" class="">
+		<h2>选择Page Box</h2>
+	</div>
+
+	<div id="select_clip_box_search">
+		<div class="input-group">
+			<input type="text" id="url" name="url" class="form-control" placeholder="检索page box">
+			<span class="input-group-btn">
+				<button class="btn btn-default" type="button">检索</button>
+			</span>
+		</div><!-- /input-group -->
+	</div>
+
+	<div id="select_clip_box_list">
+		<ul class="">
+			{% for pb in pbs %}
+			{% if loop.index is sameas 1 %}
+			<li class="selected" pb_id="{{ pb.id }}">
+			{{ pb.name }}
+			</li>
+			{% else %}
+			<li class="" pb_id="{{ pb.id }}">
+			{{ pb.name }}	
+			</li>
+			{% endif %}
+			{% endfor %}
+		</ul>
+	</div>
+
+	<div id="select_clip_box_create">
+		<div class="input-group">
+			<input type="text" id="fast_page_box_name" name="fast_page_box_name" class="form-control" placeholder="创建Page Box">
+			<span class="input-group-btn">
+				<button id="fast_create_page_box_btn" class="btn btn-default" type="button">创建</button>
+			</span>
+		</div><!-- /input-group -->
+	</div>
+
+</div>
+<!-- id#select_clip_box_wrap end -->

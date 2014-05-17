@@ -1,0 +1,80 @@
+<!-- Modal -->
+<div id="EditMyPageBoxModal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+	<div class="modal-dialog">
+		<div class="modal-content">
+			<div class="modal-header">
+				<button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+				<h3 id="myModalLabel">编辑Page Box<{{ pb.name }}></h3>
+			</div>
+
+			<div class="modal-body">
+
+				<div class="" id="create_my_page_box">
+
+					<div id="" class="input-group mt30">
+						<span class="input-group-addon">名称</span>
+						<input type="text" id="edit_page_box_name" class="form-control" placeholder="Page Box 名称" value="{{ pb.name }}">
+					</div>
+
+					<div class="alert alert-danger" style="display:none;" id="edit_box_name_warn">
+						<span class="ztag">用户名已经被占用</span>
+					</div>
+
+					<div id="" class="mt30 mb20">
+						<textarea id="edit_page_box_desc" class="form-control" placeholder="Page Box 描述" row=3>{{ pb.content }}</textarea>
+					</div>
+
+				</div>
+
+			</div>
+			<!-- class.modal-body end -->
+
+			<div class="modal-footer">
+				<button class="btn btn-sm" data-dismiss="modal" aria-hidden="true" type="button">取消</button>
+				<button id="edit_page_box_submit_btn" class="btn btn-success btn-sm fr" type="button" pb_id="{{ pb.id }}">提交</button>
+			</div>
+			<!-- class.modal-footer end -->
+		</div>
+		<!-- /.modal-content -->
+	</div>
+	<!-- /.modal-dialog -->
+</div>
+<!-- /.modal -->
+
+
+<!-- Modal -->
+<div id="DelMyPageBoxModal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+	<div class="modal-dialog">
+		<div class="modal-content">
+			<div class="modal-header">
+				<button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+				<h3 id="myModalLabel">删除Page Box<{{ pb.name }}></h3>
+			</div>
+
+			<div class="modal-body">
+
+				<div class="" id="del_my_page_box">
+					
+					<p>确定要删除Page Box<{{ pb.name }}>吗？</p>
+					
+					<div class="alert alert-danger" style="display:none;" id="del_box_name_warn">
+						<span class="ztag">用户名已经被占用</span>
+					</div>
+					
+				</div>
+
+			</div>
+			<!-- class.modal-body end -->
+
+			<div class="modal-footer">
+				<button class="btn btn-sm" data-dismiss="modal" aria-hidden="true" type="button">取消</button>
+				<button id="del_page_box_submit_btn" class="btn btn-success btn-sm fr" type="button" pb_id="{{ pb.id }}" box_name="{{ pb.name }}">提交</button>
+			</div>
+			<!-- class.modal-footer end -->
+		</div>
+		<!-- /.modal-content -->
+	</div>
+	<!-- /.modal-dialog -->
+</div>
+<!-- /.modal -->
+

@@ -1,0 +1,125 @@
+{% extends "layout.html" %}
+{% set active_page = "post" %}
+
+{% block title_block %}
+编辑文章 | {{ config.SITE_NAME }}
+{% endblock %}
+
+
+
+{%block js_block%}
+
+
+
+<script type="text/javascript" src="/static/js/simditor/scripts/js/module.js"></script>
+<script type="text/javascript" src="/static/js/simditor/scripts/js/uploader.js"></script>
+<script type="text/javascript" src="/static/js/simditor/scripts/js/simditor.js"></script>
+
+<script src="/static/js/myedit.js"></script>
+
+<script type="text/javascript">
+$(function() {
+
+	var offset = $('#write-post-ops-area').offset();
+	var outer_w = $('#write-post-ops-area').outerWidth();
+	$('#write-post-ops-area').width(outer_w);
+	
+	$(window).scroll(function () {
+
+		var scrollTop = $(window).scrollTop();
+		if (offset.top < scrollTop)  {
+			$('#write-post-ops-area').addClass('write-post-ops-area-fixed');
+		}
+		else { 
+			$('#write-post-ops-area').removeClass('write-post-ops-area-fixed');
+		}
+	});
+
+
+
+
+});
+
+</script>
+
+{%endblock%}
+
+{% block css_block %}
+
+<link rel="stylesheet" type="text/css" href="/static/js/simditor/styles/font-awesome.css" />
+<link rel="stylesheet" type="text/css" href="/static/js/simditor/styles/simditor.css" />
+
+<link rel="stylesheet" type="text/css" href="/static/css/fmt.css">
+{% endblock %}
+
+
+
+
+{% block site_header_block %}
+{% include 'post_site_header_wrap.html' %}
+{% endblock %}
+
+{% block content_block %}
+
+<div id="write-post-wrap" class="container mt30 mb30 clearfix">
+	<div id="write-post-input-area" class="w70pc-box fl">
+		<div id="write-post-header" class="w100pc-box mb30 clearfix">
+
+			<div class="write-post-title">
+				<input type="text" id="PostTitle" class="form-control" placeholder="写一个简洁明了的标题..." value="{{ post.title }}">
+			</div>
+			<!-- class.write-post-title -->
+
+		</div>
+		<!-- id#write-post-header end -->
+
+		
+		<div id="write-post" class="full-box clearfix">
+			<div id="write-post-content" class="fmt">
+				<textarea id="advanced_editor" class="form-control advanced_editor" rows="20" placeholder="写下你的想法...">{{ post.content }}</textarea>
+			</div>
+			<!-- id#write-post-content end -->
+			
+		</div>
+		<!-- id#write-post end -->
+		
+		
+	</div>
+	<!-- id#write-post-input-area end -->
+
+	<div id="write-post-ops-area-wrap" class="w28pc-box fr mt80" style="">
+		<div id="write-post-ops-area" class="" style="">
+			<div class="mb20">
+				<textarea id="commit_editor" class="form-control" rows="8" placeholder="写下本次版本的主要变更记录"></textarea>
+			</div>
+
+			<div id="write-post-menu-wrap" class="clearfix" style="">
+
+				<div id="write-post-control" class="fr clearfix">
+					<button type="button" id="CommitBtn" class="btn btn-danger btn-ops fr" post_id="{{ post.id }}" post_draft_id="" submit_url="/post/ajaxCommit">提交更新</button>
+					<button type="button" id="SaveAsDraftBtn" class="btn btn-default btn-ops fr" post_id="{{ post.id }}" post_draft_id="" submit_url="/post/ajaxSaveDraft">保存草稿</button>
+				</div>
+				<div class="option_wrap fr">
+					<label class="radio-inline">
+						<input type="radio" name="VisibilityOption" id="optionsRadios1" value="self" {% if post.visibility == "self"%}checked{% endif %}>
+						私密
+					</label>
+					<label class="radio-inline">
+						<input type="radio" name="VisibilityOption" id="optionsRadios2" value="public"{% if post.visibility == "public"%}checked{% endif %}>
+						公开
+					</label>
+				</div>
+
+			</div>
+
+		</div>
+		<!-- id#write-post-ops-area end -->
+	</div>
+	<!-- id#write-post-ops-area-wrap end -->
+
+</div>
+<!-- id#write-post-wrap end -->
+
+
+{% endblock %}
+

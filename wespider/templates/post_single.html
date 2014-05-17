@@ -1,0 +1,120 @@
+{% extends "layout.html" %}
+{% set active_page = "post" %}
+
+{% block title_block %}
+{{ post.title }} | {{ config.SITE_NAME }}
+{% endblock %}
+
+
+{% block css_block %}
+<link rel="stylesheet" type="text/css" href="/static/css/fmt.css">
+{% endblock %}
+
+
+{% block site_header_block %}
+{% include 'post_site_header_wrap.html' %}
+{% endblock %}
+
+{% block content_block %}
+
+<div id="post-single-wrap" class="container mt30 mb30 clearfix">
+	<div class="w65pc-box pd20 fl">
+		<div class="single-post-title-wrap mb20 fmt">
+			{% if post.visibility == "public" %}
+			<h2><a href="/post/{{ post.id }}">{{ post.title }}</a></h2>
+			{% else %}
+			<h2><span class="visibility_self">[<i class="icon-lock"></i>]</span> <a href="/post/{{ post.id }}">{{ post.title }}</a></h2>
+			{% endif %}
+		</div>
+		
+		<div class="single-post-content-wrap fmt">
+			{% autoescape false %}
+			{{ post.content }}
+			{% endautoescape %}
+		</div>
+	</div>
+	
+	<div class="w30pc-box pd20 whitebg fr">
+		
+		
+		<div class="aside_section_wrap mb30">
+			
+			<div class="aside_section_content mt20">
+				<div class="aside_post_ops">
+					<a class="btn btn-default" href="/post/{{ post.id }}/edit"><i class="icon-edit"></i> 更新文章</a>	
+					<a class="btn btn-default post_del_btn" post_id="{{ post.id }}" post_title="{{ post.title }}"><i class="icon-trash"></i> 删除文章</a>
+				</div>
+			</div>
+			<!-- class.aside_section_content end -->
+		</div>
+		<!-- class.aside_section_wrap end -->
+
+		<div class="aside_section_wrap mb30">
+			<div class="aside_section_header">
+				<h2>文章作者</h2>
+			</div>
+			<!-- class.aside_section_header end -->
+
+			<div class="aside_section_content mt20">
+				<div class="aside_author_wrap clearfix">
+					<div class="aside_author_avatar fl">
+						<a href="/u/{{ author.id }}" target="_blank">
+							<img src="http://sfault-avatar.b0.upaiyun.com/917/665/917665954-1030000000091295_big64">
+						</a>
+					</div>
+					<div class="aside_author_name fl">
+						<h2><a href="/u/{{ author.id }}" target="_blank">{{ author.user_name }}</a></h2>
+					</div>
+				</div>
+			</div>
+			<!-- class.aside_section_content end -->
+		</div>
+		<!-- class.aside_section_wrap end -->
+		
+		
+		<div class="aside_section_wrap mb30">
+			<div class="aside_section_header">
+				<h2>所属专栏</h2>
+			</div>
+			<!-- class.aside_section_header end -->
+
+			<div class="aside_section_content mt20">
+				<div class="aside_column_wrap clearfix">
+					<div class="aside_column_name">
+						<h2><a href="" target="_blank">开发环境搭建部署</a></h2>
+					</div>
+				</div>
+			</div>
+			<!-- class.aside_section_content end -->
+		</div>
+		<!-- class.aside_section_wrap end -->
+
+		<div class="aside_section_wrap">
+			<div class="aside_section_header">
+				<h2 class="">版本记录</h2>
+				
+			</div>
+			<!-- class.aside_section_header end -->
+
+			<div class="aside_section_content">
+				<ul class="pd20">
+					{% for pc in pcs %}
+						<li class="mb20">
+							<div><a href="/post/commit/{{ pc.id }}" target="_blank">{{ pc.update_date }}</a></div>
+							<div class="commit_content">{{ pc.commit_content }}</div>
+						</li>
+					{% endfor %}
+				</ul>
+			</div>
+			<!-- class.aside_section_content end -->
+		</div>
+		<!-- class.aside_section_wrap end -->
+	</div>
+	<!-- class.w35pc-box end -->
+
+</div>
+<!-- id#post-single-wrap end -->
+
+
+{% endblock %}
+
