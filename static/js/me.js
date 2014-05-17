@@ -517,6 +517,9 @@ $(function() {
 					$('.loadmorepage button').attr('data_url', ret_data.data_url);
 					$('.loadmorepage button').attr('pg_skw', ret_data.pg_skw);
 					$('.loadmorepage button').attr('start', ret_data.start);
+
+					
+
 				} else {
 					location.href=window.location.href;
 				}
@@ -546,8 +549,14 @@ $(function() {
 				if(ret_data.success) {
 					$('.loadmorepage button').attr('start', ret_data.start);
 					$('#my_page_list_wrap ul').append(ret_data.content);
+					
+					
 				} else {
 					$('.loadmorepage button').attr('start', ret_data.start);
+					
+					if(ret_data.start == -1) {
+						$('.loadmorepage').fadeOut();	
+					}
 				}
 			}
 		});

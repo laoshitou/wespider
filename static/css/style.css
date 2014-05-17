@@ -847,9 +847,15 @@ a#s_install_add_btn {
 
 
 #my_page_list_wrap ul li {
-	float: left;
 	list-style: none;
-	margin: 0 46px 50px 0;
+	margin: 0 0px 30px 0;
+	
+	-moz-border-radius: 3px;
+	-webkit-border-radius: 3px;
+	border-radius: 3px;
+	-webkit-box-shadow: 0 1px 2px rgba(24, 24, 24, 0.2);
+	-moz-box-shadow: 0 1px 2px rgba(24, 24, 24, 0.2);
+	box-shadow: 0 1px 2px rgba(24, 24, 24, 0.2);
 }
 
 #my_page_list_wrap ul li:nth-child(4n) {
@@ -860,21 +866,24 @@ a#s_install_add_btn {
 	padding: 15px 10px;
 	position: relative;
 	overflow: hidden;
-	width: 220px;
-	height: 240px;
+	height: 75px;
+	width: 930px;
 	padding: 10px;
-	border: 1px solid #ddd;
-	-moz-border-radius: 4px;
-	-webkit-border-radius: 4px;
-	border-radius: 4px;
-	-webkit-box-shadow: 0 0 5px rgba(0,0,0,0.05);
-	-moz-box-shadow: 0 0 5px rgba(0,0,0,0.05);
-	box-shadow: 0 0 5px rgba(0,0,0,0.05);
-	border-color: #EAE9CF;
-	background: #FFFEF4 url(https://tower.im/assets/minicard-bg-doc-e538279d657a296b95ff89fce5e1dccc.png) no-repeat -20px -8px; 
+	background: #FFFEF4; 
 	overflow: inherit;
 }
 
+.page_item_side {
+	width: 90px;
+	height: 75px;
+	background: #e3e5cf;
+	text-align: center;
+}
+
+.page_item_side i {
+	font-size: 36px;
+	line-height: 75px;
+}
 
 .page_item_footer span {
 	color: #579E5A;
@@ -896,11 +905,15 @@ a#s_install_add_btn {
 }
 
 #my_page_list_wrap ul li .page_title_wrap a {
-	font-size: 15px;
-	color: #999;
-	font-weight: normal;
+	display: block;
+	font-size: 17px;
+	color: #555;
 	line-height: 24px;
-	padding: 10px 0px;
+	text-shadow: 0px 1px 0px rgba(255,255,255,0.3);
+	font-family: Georgia,"Times New Roman",serif;
+	overflow: hidden;
+	white-space: nowrap;
+	text-overflow: ellipsis;
 }
 
 
@@ -915,9 +928,8 @@ a#s_install_add_btn {
 	font-size: 13px;
 	position: absolute;
 	bottom: 0px;
-	border-top: 1px solid #EBE4CE;
 	padding: 5px 0px;
-	width: 200px;
+	width: 98%;
 }
 
 #my_page_list_wrap ul li .page_meta a {
@@ -1225,6 +1237,7 @@ span.section_name {
 
 
 .page_box_content_wrap {
+	
 	background-color: #ffffff;
 	border-color: #ffffff;
 	-webkit-box-shadow: 0 0 5px rgba(0,0,0,0.15);
@@ -1247,3 +1260,94 @@ span.section_name {
 	border-top: 1px solid #BDC7C4;
 	padding-top: 30px;
 }
+
+
+.page_lists_wrap {
+	width: 1100px;
+	margin: 0px auto;
+}
+
+li.page_lists_item {
+	float: left;
+	list-style: none;
+	margin: 0 46px 50px 0;
+}
+
+li.page_lists_item:nth-child(4n) {
+	margin-right: 0px;
+}
+
+ li.page_lists_item .page_lists_item_content {
+	 display: block;
+	 padding: 15px 10px;
+	 position: relative;
+	 overflow: hidden;
+	 width: 240px;
+	 height: 250px;
+	 padding: 10px;
+	 border: 1px solid #ddd;
+	 -moz-border-radius: 4px;
+	 -webkit-border-radius: 4px;
+	 border-radius: 4px;
+	 -webkit-box-shadow: 0 0 5px rgba(0,0,0,0.05);
+	 -moz-box-shadow: 0 0 5px rgba(0,0,0,0.05);
+	 box-shadow: 0 0 5px rgba(0,0,0,0.05);
+	 border-color: #EAE9CF;
+	 background: #FFFEF4 url(https://tower.im/assets/minicard-bg-doc-e538279d657a296b95ff89fce5e1dccc.png) no-repeat -20px -8px;
+	 overflow: inherit;
+ }
+
+ .page_lists_item_content .list_title h2 {
+	 overflow: hidden;
+	 white-space: nowrap;
+	 text-overflow: ellipsis;
+	 display: block;
+	 font-size: 17px;
+	 font-weight: 700;
+	 font-family: Arial,Helvetica,sans-serif;
+	 color: #84a099;
+ }
+
+
+ .page_lists_item_content .list_title h2 i {
+	width: 18px;
+	display: inline-block;
+ }
+ 
+ a.page_lists_item_content .list_title h2 i.icon-folder-open-alt {
+	display: none;
+ }
+
+ a.page_lists_item_content:hover .list_title h2 i.icon-folder-close-alt {
+	display: none;
+ }
+
+ a.page_lists_item_content:hover .list_title h2 i.icon-folder-open-alt {
+	display: inline-block;
+ }
+ 
+.page_lists_item_content .list_pages {
+	margin-top: 25px;
+	display: block;
+	height: 150px;
+ }
+ 
+ 
+ .page_lists_item_content .list_pages ul li {
+	color: #999;
+	overflow: hidden;
+	white-space: nowrap;
+	text-overflow: ellipsis;
+	padding: 5px 0px;
+	list-style: disc;
+	list-style-position: inside;
+ }
+
+
+ .divider {
+	 height: 0px;
+	 margin: 9px 0px;
+	 overflow: hidden;
+	 border-top: 1px solid rgba(235, 228, 206, 0.5);
+	 border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+ }

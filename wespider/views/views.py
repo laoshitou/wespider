@@ -74,6 +74,8 @@ def mybox():
 		
 		if g.user and start != -1:
 			pages = Page.getByUser(user_id=g.user.id, start=start, limit=config.PAGESIZE)
+
+
 			if pages:
 				start = start + config.PAGESIZE
 				content = render_template('my_page_list.html', pages=pages, iam_him=iam_him)
@@ -85,8 +87,12 @@ def mybox():
 
 	if g.user:
 		pbs = PageBox.getByUser(g.user.id)
-		pages = Page.getByUser(user_id=g.user.id, start=0, limit=config.PAGESIZE)
-		return render_template('boxes.html', user_name=user_name, pbs=pbs, pages=pages, data_url=data_url, start=config.PAGESIZE, iam_him=iam_him)
+
+		for pb in pbs:
+			pages = Page.getByPagebox(pb_id=pb.id, start=0, limit=5)
+			pb.pages = pages
+		
+		return render_template('lists.html', user_name=user_name, pbs=pbs, pages=pages, data_url=data_url, start=config.PAGESIZE, iam_him=iam_him)
 
 	return render_template('index.html', user_name=user_name, pbs=pbs, pages=pages)
 

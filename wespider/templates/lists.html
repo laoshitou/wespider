@@ -1,0 +1,45 @@
+{% extends "layout.html" %}
+
+{% block title_block %}
+我收藏的Page | {{ config.SITE_NAME }}
+{% endblock %}
+
+
+{% block content_block %}
+
+<div class="full_box mt30 clearfix">
+	<div class="container clearfix mb30">
+		<div class="page_lists_wrap clearfix">
+			<ul class="">
+				{% for pb in pbs %}
+				<li class="page_lists_item">
+				<a class="page_lists_item_content" href="/pagebox/{{ pb.id }}">
+					<div class="list_title">
+						<h2 class="">
+							<i class="icon-folder-close-alt"></i><i class="icon-folder-open-alt"></i> {{ pb.name }}
+						</h2>
+					</div>
+					<!-- class.list_title -->
+
+					<div class="list_pages" href="/pagebox/{{ pb.id }}">
+						<ul>
+							{% for page in pb.pages %}
+							<li>{{ page.title }}</li>
+							{% endfor %}
+						</ul>
+					</div>
+				</a>
+				<!-- class.page_lists_item_content end -->
+				</li>
+				{% endfor %}
+			</ul>
+		</div>
+		<!-- class.page_box_list_wrap end -->
+	</div>
+	<!-- class.container end -->
+</div>
+<!-- class.full_box end -->
+
+
+{% endblock %}
+

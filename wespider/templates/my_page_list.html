@@ -1,9 +1,16 @@
 {% for page in pages %}
 <li>
-<div class="page_item_wrap">
-	<div class="page_item_content">
-		
-		<div class="page_url_wrap mb20">
+<div class="page_item_wrap clearfix">
+
+	<div class="page_item_side fl">
+		<i class="icon-link"></i>
+	</div>
+
+	<div class="page_item_content fl">
+
+
+
+		<div class="page_url_wrap mb20" style="display: none;">
 			<a href="{{ page.url }}" target="_blank">{{ page.url }}</a>
 		</div>
 
@@ -15,22 +22,20 @@
 			{% endif %}
 		</div>
 		<div id="page_tip_wrap_{{ page.id }}"class="page_tip_wrap" style="display: none;">{{ page.tip }}</div>
+		<div class="divider"></div>
 		<div class="page_meta">
 
 			{% if iam_him %}				
 			<span class="page_ops_btn page_del_btn" page_id="{{ page.id }}" page_title="{{ page.title }}"><i class="icon-trash"></i></span>
 			<span class="page_ops_btn page_move_btn" page_id="{{ page.id }}" page_title="{{ page.title }}"><i class="icon-copy"></i></span>
 			<span class="page_ops_btn page_edit_btn" page_id="{{ page.id }}" page_title="{{ page.title }}" page_url="{{ page.url }}"><i class="icon-edit"></i></span>
+			<span>{{ page.date }}</span>
 			{% endif %}
 		</div>
 	</div>
-	<!-- class.page_item_content end -->
 
-	<div class="page_item_footer">
-		<span>{{ page.date }}</span>
-	</div>
-	<!-- class.page_item_footer end -->
 </div>
+<!-- class.page_item_wrap end -->
 </li>
 {% endfor %}
 
