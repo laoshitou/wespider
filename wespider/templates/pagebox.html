@@ -10,26 +10,36 @@
 <div class="full_box mt30 clearfix">
 	<div class="container clearfix mb30">
 		<div class="page_box_content_wrap">
-			<div id="pagebox_header" class="clearfix">
-				<h2 class="section_title fl"><a href="/">我收藏的Page</a> / <a href="/pagebox/{{ pb.id }}">{{ pb.name }}</a></h2>
-				
-				<a id="pagebox_del_btn" class="btn btn-danger btn-xs pagebox_ops fr" href="#DelMyPageBoxModal" data-toggle="modal"><i class="icon-remove"></i> 删除</a>
-				<a id="pagebox_edit_btn" class="btn btn-default btn-xs pagebox_ops fr" href="#EditMyPageBoxModal" data-toggle="modal"><i class="icon-cog"></i> 编辑</a>
+
+			<h2 class="section_title "><a href="/">我收藏的Page</a> / <a href="/pagebox/{{ pb.id }}">{{ pb.name }}</a></h2>
+
+			<div id="pagebox_header" class="clearfix mt30">
+				<div class="section_search_wrap fl">
+					<div class="input-group">
+						<span class="input-group-btn">
+							<button class="btn btn-default" type="button"><i class="icon-search"></i></button>
+						</span>
+						<input type="text" class="form-control" placeholder="按关键词搜索Page...">
+					</div><!-- /.col-lg-6 -->
+				</div><!-- /.row -->
+
+				<a id="pagebox_del_btn" class="pagebox_ops fr" href="#DelMyPageBoxModal" data-toggle="modal"><i class="icon-remove"></i> 删除</a>
+				<a id="pagebox_edit_btn" class="pagebox_ops fr" href="#EditMyPageBoxModal" data-toggle="modal"><i class="icon-cog"></i> 设置</a>
 
 			</div>
-			
+
 			{% include 'install_add_btn_wrap.html' %}
-			
+
 			{% include 'search_my_page_ret_summary.html' %}
 
 			{% include 'my_page_list_wrap.html' %}
-			
+
 			{% include 'loadmorepage.html' %}
-			
+
 			{% if iam_him %}				
 			{% include 'target_page_box_modal.html' %}
 			{% endif %}
-			
+
 		</div>
 		<!-- class.page_box_content_wrap end -->
 	</div>

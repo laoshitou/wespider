@@ -849,13 +849,14 @@ a#s_install_add_btn {
 #my_page_list_wrap ul li {
 	list-style: none;
 	margin: 0 0px 30px 0;
-	
+	/*	
 	-moz-border-radius: 3px;
 	-webkit-border-radius: 3px;
 	border-radius: 3px;
 	-webkit-box-shadow: 0 1px 2px rgba(24, 24, 24, 0.2);
 	-moz-box-shadow: 0 1px 2px rgba(24, 24, 24, 0.2);
 	box-shadow: 0 1px 2px rgba(24, 24, 24, 0.2);
+	*/
 }
 
 #my_page_list_wrap ul li:nth-child(4n) {
@@ -863,13 +864,12 @@ a#s_install_add_btn {
 }
 
 #my_page_list_wrap ul li .page_item_content {
-	padding: 15px 10px;
+	padding: 5px 10px;
 	position: relative;
 	overflow: hidden;
 	height: 75px;
 	width: 930px;
-	padding: 10px;
-	background: #FFFEF4; 
+	/*background: #FFFEF4; */
 	overflow: inherit;
 }
 
@@ -951,8 +951,10 @@ a#s_install_add_btn {
 }
 
 a.pagebox_ops {
-	margin-left: 10px;
-	/*color: #999;*/
+	margin-left: 25px;
+	color: #999;
+	opacity: .8;
+	font-size: 15px;
 }
 
 a#pagebox_del_btn i {
@@ -1251,13 +1253,12 @@ span.section_name {
 
 
 #pagebox_header {
-	border-bottom: 3px solid #BDC7C4;
-	padding-bottom: 20px;
+	border-bottom: 1px solid rgba(236, 236, 220, 1);
+	padding-bottom: 5px;
 	margin-bottom: 5px;
 }
 
 #my_page_list_wrap {
-	border-top: 1px solid #BDC7C4;
 	padding-top: 30px;
 }
 
@@ -1348,6 +1349,38 @@ li.page_lists_item:nth-child(4n) {
 	 height: 0px;
 	 margin: 9px 0px;
 	 overflow: hidden;
-	 border-top: 1px solid rgba(235, 228, 206, 0.5);
-	 border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+	 border-top: 1px solid rgba(236, 236, 220, 1);
+ }
+
+ .section_search_wrap {
+	width: 500px;
+ }
+
+ .section_search_wrap .input-group {
+	width: 100%;
+ }
+
+ .section_search_wrap {
+	position: relative;
+ }
+
+ .section_search_wrap .input-group-btn {
+	position: absolute;
+ }
+
+ .section_search_wrap .input-group-btn button {
+	background: inherit;
+	border: 0px;
+	border-radius: 18px;
+	width: 45px;
+	height: 34px;
+ }
+
+ .section_search_wrap input {
+	border-radius: 18px !important;
+	padding-left: 40px;
+	border: 1px solid #DDD;
+ }
+ .section_search_wrap input:focus {
+	border: 1px solid #DDD;
  }
